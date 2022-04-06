@@ -61,14 +61,21 @@ const TodoCardScreen = (prop: Props) => {
         </View>
 
         <View row>
-          <View flex padding-2>
-            <Button
-              onPress={() => del()}
-              label={'Delete'}
-              size={Button.sizes.medium}
-              backgroundColor={Colors.red30}
-            />
-          </View>
+          {prop.selectedTodo ? (
+            <>
+              <View flex padding-2>
+                <Button
+                  onPress={() => del()}
+                  label={'Delete'}
+                  size={Button.sizes.medium}
+                  backgroundColor={Colors.red30}
+                />
+              </View>
+            </>
+          ) : (
+            <></>
+          )}
+
           <View flex padding-2>
             <Button
               onPress={() => save()}
